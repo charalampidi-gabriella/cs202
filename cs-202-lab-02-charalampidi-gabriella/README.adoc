@@ -1,0 +1,56 @@
+= CS 202 Lab 2, Spring 2022
+
+== Learning Targets
+* (CORE) I can create a makefile that compiles a simple application
+* (CORE) I can create a simple C++
+
+== Grading
+Each element of the rubric for this lab is graded on a "pass / needs work" basis. No partial credit is given. You have one redo after grading is complete to pass this lab. See the rubric in WebCampus for the grading criteria.
+
+== Overview
+
+In this lab, you will take code that we developed during class and extend it by adding a new class. The code already includes a Cat class. You will extend it by added a LabMouse class.
+
+== Steps
+
+.Step 1
+Compile and run the code to ensure that it works and there are no errors.
+
+.Step 2
+Create files called `labmouse.cpp` and `labmouse.h`.
+
+.Step 3
+In the .h file, create the class `LabMouse`.
+
+* Add a private member variable of type `std::string` for the animal's name, and another of type `int` to hold the age. Set the default age to 1 and the default name to "" (an empty string).
+* Add a method called `speak`. When called, the method should print _Narf!_ to the console. The prototype of the function
+should be defined as a public method of the class in the .h file. The body of the function should be in the .cpp file.
+* Compile the `labmouse.cpp` file using `g++` and the appropriate options to tell the compiler to create an object file. Correct any errors that appear from the compilation.
+
+.Step 4
+Add a default constructor to the LabMouse class that sets the value of `name` to "Pinky". Compile again to ensure that there are no errors.
+
+.Step 5
+Add a method to the `LabMouse` class called `sayHello()`. The method should print the name and the age of the mouse to the console.
+
+.Step 6
+* In the `main` method below the cat speak method, instantiate a new LabMouse object. You will need to include the labmouse.h file to the `main.cpp` file.
+* Call the `sayHello` method for the mouse
+* Call the `speak` method for the mouse
+* Compile and run your application correct any errors.
+* Use `git add .` to add your new code and any changes you have made to Git, and the commit your changes. Your commit message should be "lab 2 part 1 complete"
+
+.Step 6
+* Add a parameterized constructor to the `LabMouse` class that takes as arguments the name and age of the mouse.
+* In `main`, instantiate a new `LabMouse` object with the name "The Brain" and an age of 2.
+* Call the `sayHello` method on this mouse as well.
+* Compile and run the application to verify that it is working and has no errors.
+
+.Step 7
+Create a makefile for the project. It should have a default target that generates an executable called `acmelab` and a target called `clean` that deletes the executable and any object files.
+
+.Step 8
+* Add and commit new files and changes to git.
+* Push your code to Github using `git push origin master`
+* Go to your Github account and verify that your code has correctly been pushed.
+* Copy the URL for your repository, and submit that along with your Github username to WebCampus.
