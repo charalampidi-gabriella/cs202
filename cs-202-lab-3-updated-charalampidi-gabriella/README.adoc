@@ -1,0 +1,45 @@
+= CS 202 Lab 3, Spring 2022
+:icons: font
+
+== Overview
+
+This lab is designed to give you experience using C++ streams for file I/O.
+
+== TL;DR
+
+Create a method that reads in the supplied file "input-file.txt" and writes it to another file cleverly called "output-file.txt". The first line of "output-file.txt" should be "What follows is the contents of input-file.txt". You will then read in the output file that you just created and _append_ its contents to a third file called "appendme.txt".
+
+== Steps
+
+.Step 1
+Create a makefile to generate an executable named `lab3`. The only file for this project will be `main.cpp`.
+
+.Step 2
+
+In `main.cpp`, create a method called `copyAndAppend`
+
+* The method should have three parameters: `std::string inputFile`,  `std::string outputFile`, and `std::string appendme`
+* In the method
+** Create an `ifstream` object that opens the file with the name passed in the `inputFile` parameter
+** Create an `ofstream` object that opens a file for output with the name passed in the `outputFile` parameter
+** Write the following string to the `outputFile`: "What follows is the contents of input-file.txt". *NOTE: The input, output, and append files must use the names passed in to the function.*
+** In a loop, read the input file  _one line at a time_  and write that line to the output file. Your code must read as many lines as there are in the input file: you cannot hardcode a value based on knowing in advance how many lines are present.
+** Be sure to call the `close` method on the output file stream.
+** Open the `appendme` file in append mode. Open the output file for reading, and then append the contents of the output file the `appendme` file. _Hint: This should be accomplished in a loop_
+
+.Step 3
+If you have not done so already, call the function in the `main` method. Compile and run your application and check that the output file that was created is correct. At this point, your `main` function should look like this:
+
+[source, c++]
+----
+int main(){
+    copyAndAppend("input-file.txt", "output-file.txt", "appendme.txt");
+}
+----
+
+.Step 4
+
+* Add and commit new files and changes to git.
+* Push your code to Github using `git push origin master`
+* Go to your Github account and verify that your code has correctly been pushed.
+* Copy the URL for your repository, and submit that along with your Github username to WebCampus.
